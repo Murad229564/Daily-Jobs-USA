@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyJobs - Find Part-Time Jobs Near You | Flexible Hours, Great Pay</title>
+    <meta name="description" content="Discover thousands of part-time job opportunities! Flexible schedules, $15-$35/hour, work-life balance. Apply now and start earning today!">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Fresh Modern Color Palette */
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --primary-light: #7DD3FC;
+            --accent: #F59E0B;
+            --accent-dark: #D97706;
+            --success: #10B981;
+            --purple: #8B5CF6;
+            --pink: #EC4899;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8FAFC;
+            --bg-gradient: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
+            --text-primary: #0F172A;
+            --text-secondary: #64748B;
+            --border: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 22px;
+            font-weight: 800;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-subtitle {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 24px 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 24px;
+            border-radius: 50px;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: pulse-live 2s ease-in-out infinite;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        }
+
+        @keyframes pulse-live {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 68px;
+            color: white;
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.6s ease 0.1s both;
+            line-height: 1.1;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #FFF 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 40px;
+            font-weight: 500;
+            animation: fadeInUp 0.6s ease 0.2s both;
+            line-height: 1.6;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 16px;
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 16px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .search-input:focus {
+            outline: none;
+        }
+
+        .search-button {
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .search-button:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 80px 24px;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--bg-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.15);
+            border-color: var(--primary);
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .category-count {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Featured Jobs */
+        .featured-jobs {
+            padding: 80px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .jobs-grid {
+            display: grid;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .job-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--bg-gradient);
+            border-radius: 20px 0 0 20px;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .job-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .job-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .job-company-logo {
+            width: 56px;
+            height: 56px;
+            background: var(--bg-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .job-info {
+            flex: 1;
+        }
+
+        .job-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .job-company {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .job-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .badge.featured {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+        }
+
+        .job-salary {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 22px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .job-details {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .detail-icon {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .job-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .job-perks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .perk {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--purple);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .job-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .urgency {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #EF4444;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .apply-btn {
+            background: var(--accent);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .apply-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 80px 24px;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 32px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .benefit-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--bg-gradient);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
+        }
+
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .benefit-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-gradient);
+            padding: 100px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-section h2 {
+            font-size: 56px;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary);
+            padding: 20px 48px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 24px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .job-title {
+                font-size: 22px;
+            }
+
+            .cta-section h2 {
+                font-size: 38px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">DJ</div>
+                    <div class="logo-text">
+                        <div class="logo-title">DailyJobs</div>
+                        <div class="logo-subtitle">Your Daily Opportunity</div>
+                    </div>
+                </a>
+                <button class="nav-cta" onclick="findJobs()">Find Jobs Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="live-dot"></span>
+                    <span>8,500+ NEW PART-TIME JOBS POSTED TODAY</span>
+                </div>
+                
+                <h1>
+                    Find Your Perfect<br>
+                    <span class="gradient-text">Part-Time Job Today</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Flexible schedules. Great pay. Work-life balance.<br>
+                    Thousands of part-time opportunities waiting for you.
+                </p>
+
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Job title, keyword, or company...">
+                    <button class="search-button" onclick="findJobs()">Search Jobs</button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">35K+</div>
+                        <div class="stat-label">Active Jobs</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$15-35</div>
+                        <div class="stat-label">Hourly Range</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">250K+</div>
+                        <div class="stat-label">Happy Job Seekers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Find the perfect part-time job that fits your schedule and skills</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">🛒</span>
+                    <h3 class="category-title">Retail & Sales</h3>
+                    <p class="category-count">5,200+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">🍔</span>
+                    <h3 class="category-title">Food Service</h3>
+                    <p class="category-count">3,800+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">💻</span>
+                    <h3 class="category-title">Remote Work</h3>
+                    <p class="category-count">6,500+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">🏪</span>
+                    <h3 class="category-title">Customer Service</h3>
+                    <p class="category-count">4,100+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">🚚</span>
+                    <h3 class="category-title">Delivery & Driving</h3>
+                    <p class="category-count">2,900+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">🎓</span>
+                    <h3 class="category-title">Tutoring & Teaching</h3>
+                    <p class="category-count">1,800+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">🏥</span>
+                    <h3 class="category-title">Healthcare Support</h3>
+                    <p class="category-count">3,200+ jobs available</p>
+                </div>
+                <div class="category-card" onclick="findJobs()">
+                    <span class="category-icon">📦</span>
+                    <h3 class="category-title">Warehouse</h3>
+                    <p class="category-count">4,600+ jobs available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section class="featured-jobs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Part-Time Opportunities</h2>
+                <p class="section-subtitle">Hand-picked jobs with flexible schedules and competitive pay</p>
+            </div>
+
+            <div class="jobs-grid">
+                <!-- Job 1 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div style="display: flex; gap: 16px; align-items: flex-start; flex: 1;">
+                            <div class="job-company-logo">🛒</div>
+                            <div class="job-info">
+                                <h3 class="job-title">Retail Sales Associate</h3>
+                                <p class="job-company">Major Retail Chain</p>
+                                <div class="job-badges">
+                                    <span class="badge">Part-Time</span>
+                                    <span class="badge featured">Featured</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-salary">$16-22/hr</div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span>Multiple Locations</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <span>15-25 hours/week</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📅</span>
+                            <span>Flexible Schedule</span>
+                        </div>
+                    </div>
+                    <p class="job-description">
+                        Join our team and help customers find what they need! Perfect for students, parents, or anyone seeking flexible hours. Weekend and evening shifts available. No experience required - we provide full training.
+                    </p>
+                    <div class="job-perks">
+                        <span class="perk">✓ Employee Discount</span>
+                        <span class="perk">✓ Flexible Hours</span>
+                        <span class="perk">✓ Paid Training</span>
+                        <span class="perk">✓ Growth Opportunities</span>
+                    </div>
+                    <div class="job-footer">
+                        <div class="urgency">
+                            <span>🔥</span>
+                            <span>850+ positions open</span>
+                        </div>
+                        <button class="apply-btn" onclick="findJobs()">
+                            Apply Now →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div style="display: flex; gap: 16px; align-items: flex-start; flex: 1;">
+                            <div class="job-company-logo">💻</div>
+                            <div class="job-info">
+                                <h3 class="job-title">Remote Customer Support</h3>
+                                <p class="job-company">Tech Company</p>
+                                <div class="job-badges">
+                                    <span class="badge">Remote</span>
+                                    <span class="badge">Part-Time</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-salary">$18-28/hr</div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span>Work From Home</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <span>20-30 hours/week</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📅</span>
+                            <span>Choose Your Shifts</span>
+                        </div>
+                    </div>
+                    <p class="job-description">
+                        Work from anywhere! Assist customers via phone, chat, and email. Great for those who want to avoid commuting. Set your own schedule and work when it's convenient for you. Computer and internet provided.
+                    </p>
+                    <div class="job-perks">
+                        <span class="perk">✓ 100% Remote</span>
+                        <span class="perk">✓ Equipment Provided</span>
+                        <span class="perk">✓ Bonuses</span>
+                        <span class="perk">✓ Career Development</span>
+                    </div>
+                    <div class="job-footer">
+                        <div class="urgency">
+                            <span>🔥</span>
+                            <span>Hiring 600+ nationwide</span>
+                        </div>
+                        <button class="apply-btn" onclick="findJobs()">
+                            Apply Now →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div style="display: flex; gap: 16px; align-items: flex-start; flex: 1;">
+                            <div class="job-company-logo">🍔</div>
+                            <div class="job-info">
+                                <h3 class="job-title">Restaurant Team Member</h3>
+                                <p class="job-company">Popular Food Chain</p>
+                                <div class="job-badges">
+                                    <span class="badge">Part-Time</span>
+                                    <span class="badge featured">Fast Hire</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-salary">$15-20/hr</div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span>Locations Nationwide</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <span>10-25 hours/week</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📅</span>
+                            <span>Day & Evening Shifts</span>
+                        </div>
+                    </div>
+                    <p class="job-description">
+                        Join a fun, fast-paced team! Perfect for students or anyone looking for flexible part-time work. Multiple positions available: cashier, food prep, drive-thru. Free meals during shifts and employee discounts!
+                    </p>
+                    <div class="job-perks">
+                        <span class="perk">✓ Free Meals</span>
+                        <span class="perk">✓ Weekly Pay</span>
+                        <span class="perk">✓ Referral Bonuses</span>
+                        <span class="perk">✓ Fun Environment</span>
+                    </div>
+                    <div class="job-footer">
+                        <div class="urgency">
+                            <span>🔥</span>
+                            <span>1,200+ openings</span>
+                        </div>
+                        <button class="apply-btn" onclick="findJobs()">
+                            Apply Now →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div style="display: flex; gap: 16px; align-items: flex-start; flex: 1;">
+                            <div class="job-company-logo">🚚</div>
+                            <div class="job-info">
+                                <h3 class="job-title">Delivery Driver (Part-Time)</h3>
+                                <p class="job-company">Delivery Service</p>
+                                <div class="job-badges">
+                                    <span class="badge">Part-Time</span>
+                                    <span class="badge">Gig Work</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-salary">$20-35/hr</div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span>Your Area</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <span>Set Your Own Hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📅</span>
+                            <span>When You Want</span>
+                        </div>
+                    </div>
+                    <p class="job-description">
+                        Be your own boss! Deliver packages on your schedule. Work as little or as much as you want. Great for earning extra income. Use your own vehicle - car, bike, or scooter. Get paid weekly with instant cashout options available.
+                    </p>
+                    <div class="job-perks">
+                        <span class="perk">✓ Set Your Schedule</span>
+                        <span class="perk">✓ Weekly Pay</span>
+                        <span class="perk">✓ Instant Cashout</span>
+                        <span class="perk">✓ Be Your Own Boss</span>
+                    </div>
+                    <div class="job-footer">
+                        <div class="urgency">
+                            <span>🔥</span>
+                            <span>Always hiring</span>
+                        </div>
+                        <button class="apply-btn" onclick="findJobs()">
+                            Apply Now →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose DailyJobs?</h2>
+                <p class="section-subtitle">The smart way to find flexible part-time work</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Quick Apply</h3>
+                    <p>Apply to multiple jobs in minutes. No lengthy applications or complicated forms. Get hired faster with our streamlined process.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Daily Updates</h3>
+                    <p>New jobs posted every day! Get notifications for opportunities that match your skills and schedule preferences.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Competitive Pay</h3>
+                    <p>All jobs vetted for fair pay. Find positions offering $15-$35/hour with transparent salary information upfront.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Verified Jobs</h3>
+                    <p>Every listing is verified and legitimate. No scams, no fake postings - only real opportunities from trusted employers.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Flexible Hours</h3>
+                    <p>Find jobs that fit YOUR schedule. Morning, evening, weekend - filter by when you want to work.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Perfect Match</h3>
+                    <p>Smart matching based on your skills, location, and availability. Find jobs you'll actually love doing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Find Your Perfect Part-Time Job?</h2>
+            <p>Join 250,000+ job seekers who found flexible work through DailyJobs</p>
+            <button class="cta-button" onclick="findJobs()">
+                🚀 Start Your Job Search Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DailyJobs</h4>
+                    <p style="margin-top: 12px; line-height: 1.7; font-size: 14px;">
+                        Your daily source for quality part-time job opportunities across the United States.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Job Seekers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#jobs">Browse Jobs</a></li>
+                        <li><a href="#categories">Job Categories</a></li>
+                        <li><a href="#resources">Career Resources</a></li>
+                        <li><a href="#tips">Job Search Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#employers">For Employers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 DailyJobs. All rights reserved. • Equal Opportunity Employer</p>
+                <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">
+                    Connecting job seekers with flexible part-time opportunities daily
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // 🎯 YOUR CPA OFFER LINK
+        // ========================================
+        const DAILYJOBS_OFFER_URL = 'https://www.af9m8trk.com/LUE11AVE/QLQ11Y4B/';
+
+        // Main function for all CTAs
+        function findJobs() {
+            console.log('🚀 DailyJobs - Redirecting to offer:', DAILYJOBS_OFFER_URL);
+            
+            // Analytics tracking (optional)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'job_search_click', {
+                    'event_category': 'Part Time Jobs',
+                    'event_label': 'DailyJobs Search',
+                    'value': 1
+                });
+            }
+            
+            // Direct redirect to CPA offer
+            window.location.href = DAILYJOBS_OFFER_URL;
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
